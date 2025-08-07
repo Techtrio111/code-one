@@ -1,0 +1,125 @@
+Conversation opened. 1 read message.
+
+Skip to content
+Using N.B.K.R. Institute of Science & Technology Mail with screen readers
+
+38 of 1,084
+login page
+Inbox
+
+BOREDDY ABHINAYA NBKRIST <23kb1a3012@nbkrist.org>
+Attachments
+Thu, Jul 31, 11:47 AM (7 days ago)
+to me, 23kb1a3016, 23kb1a3011
+
+
+ One attachment
+  •  Scanned by Gmail
+<html>
+<head>
+  <title>Login & Greeting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #7cacb873;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #519b57;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #5c4e4e;
+    }
+
+    #greetingPage {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="loginPage">
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username" />
+  <input type="password" id="password" placeholder="Password" />
+  <button onclick="validateLogin()">Login</button>
+  <div class="message" id="loginMessage"></div>
+</div>
+
+<div class="container" id="greetingPage">
+  <h1 id="greetingMessage">Loading...</h1>
+</div>
+
+<script>
+  // Predefined credentials
+  const validUsername = "john";
+  const validPassword = "john";
+
+  function getGreeting() {
+    const now = new Date();
+    const hour = now.getHours();
+
+    if (hour >= 5 && hour < 12) {
+      return "Good morning";
+    } else if (hour >= 12 && hour < 17) {
+      return "Good afternoon";
+    } else if (hour >= 17 && hour < 18) {
+      return "Good evening";
+    } else {
+      return "Good night";
+    }
+  }
+
+  function validateLogin() {
+    const usernameInput = document.getElementById("username").value.trim();
+    const passwordInput = document.getElementById("password").value.trim();
+    const loginMessageDiv = document.getElementById("loginMessage");
+
+    if (usernameInput === validUsername && passwordInput === validPassword) {
+      const greeting = getGreeting();
+      const message = `${greeting}, ${usernameInput}!`;
+
+      // Hide login and show greeting
+      document.getElementById("loginPage").style.display = "none";
+      document.getElementById("greetingPage").style.display = "block";
+      document.getElementById("greetingMessage").textContent = message;
+    } else {
+      loginMessageDiv.textContent = "Invalid username or password.";
+    }
+  }
+</script>
+
+</body>
+</html>
+11.html
+Displaying 11.html.
